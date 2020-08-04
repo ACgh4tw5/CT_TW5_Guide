@@ -9833,7 +9833,7 @@ As per SKB article CS10031812
 #Set ticket status to Clarification/Investigation, add RSM to it
 #Route to HSC</pre>
 </div>
-<div created="20200804230657971" modified="20200804230847201" title="Straton">
+<div created="20200804230657971" modified="20200804231437637" title="Straton">
 <pre>Improvement of arcing behavior
 
 Tubes which were replaced recently show sporadically an increased arcing behavior (both side arcings) with single aborts.
@@ -9841,22 +9841,22 @@ This may happen and does not necessarily mean that the Straton tube is defective
 procedure (valid for Definition family – Def. AS, Edge, Flash and Drive systems)
 
 #Perform Pre-Filament Adaption &amp; Filament Adaption (Local Service -&gt; Tune Up -&gt; Expert Mode -&gt; Filament Adapt)
-FilAdapt ensures that the optimum tube current is performed on scan begin phase.
-
+* FilAdapt ensures that the optimum tube current is performed on scan begin phase.
 #Improve arcing behavior - the particles that cause arcs close to the emitter will be burnt by this procedure;
 a high rate of arcings during this procedure is a good sign!
-
+&quot;&quot;&quot;
 Perform Service scans (Local Service -&gt; Test Tools -&gt; Rot/Static) with following parameters:
-*Deselect all items in “Process Steps”
-*RotTime 0,5 s, Number of Rotations 20
-*Slice collimation 64 x 0.6mm (if available – otherwise select 32 x 0.6mm)
-*Click “Verify” to enable next selection
-*Focus: SmallFocus
-*120 kV / 300 mA
-*Emission Control: ITControl
-*Check Z-FFS
-*If Z-deflection is not kept, then change -&gt;
-*RotTime 1 s, Number of Rotations 10
+* Deselect all items in “Process Steps”
+* RotTime 0,5 s, Number of Rotations 20
+* Slice collimation 64 x 0.6mm (if available – otherwise select 32 x 0.6mm)
+* Click “Verify” to enable next selection
+* Focus: SmallFocus
+* 120 kV / 300 mA
+* Emission Control: ITControl
+* Check Z-FFS
+* If Z-deflection is not kept, then change -&gt;
+* RotTime 1 s, Number of Rotations 10
+&quot;&quot;&quot;
 
 Repeat this scan 10 times (ignore arcing during scans).
 
