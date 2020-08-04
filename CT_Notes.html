@@ -187,6 +187,8 @@ Error message and password prompt
 
 <li>Standard Problem Escalation</li>
 
+<li>Straton</li>
+
 <li>Troubleshooting</li>
 
 </ul>
@@ -9612,7 +9614,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200804221224339" list="Troubleshooting" modified="20200804230508365" title="$:/StoryList">
+<div created="20200804221224339" list="Troubleshooting Straton" modified="20200804230653122" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9830,6 +9832,62 @@ As per SKB article CS10031812
 #Collect EvtApplication, EvtCustomer, EvtSystem files and upload
 #Set ticket status to Clarification/Investigation, add RSM to it
 #Route to HSC</pre>
+</div>
+<div created="20200804230657971" modified="20200804230816965" title="Straton">
+<pre>Improvement of arcing behavior
+
+Tubes which were replaced recently show sporadically an increased arcing behavior (both side arcings) with single aborts.
+This may happen and does not necessarily mean that the Straton tube is defective. For such cases, please use following
+procedure (valid for Definition family – Def. AS, Edge, Flash and Drive systems)
+
+#Perform Pre-Filament Adaption &amp; Filament Adaption (Local Service -&gt; Tune Up -&gt; Expert Mode -&gt; Filament Adapt)
+FilAdapt ensures that the optimum tube current is performed on scan begin phase.
+
+#Improve arcing behavior - the particles that cause arcs close to the emitter will be burnt by this procedure;
+a high rate of arcings during this procedure is a good sign!
+
+Perform Service scans (Local Service -&gt; Test Tools -&gt; Rot/Static) with following parameters:
+*Deselect all items in “Process Steps”
+*RotTime 0,5 s, Number of Rotations 20
+*Slice collimation 64 x 0.6mm (if available – otherwise select 32 x 0.6mm)
+*Click “Verify” to enable next selection
+*Focus: SmallFocus
+*120 kV / 300 mA
+*Emission Control: ITControl
+*Check Z-FFS
+*If Z-deflection is not kept, then change -&gt;
+*RotTime 1 s, Number of Rotations 10
+
+Repeat this scan 10 times (ignore arcing during scans).
+
+
+Perform Service scans (Local Service -&gt; Test Tools -&gt; Rot/Static) with the following parameters:
+• Deselect all items in “Process Steps”
+• RotTime 0,5 s, Number of Rotations 20
+• Slice collimation 64 x 0.6mm (if available – otherwise select 32 x 0.6mm)
+• Click “Verify” to enable next selection
+• Focus: SmallFocus
+• 140 kV / 250 mA
+• Emission Control: ITControl
+• check Z-FFS
+• if Z-deflection is not kept, then change -&gt;
+• RotTime 1 s, Number of Rotations 10
+
+Repeat this scan 10 times (ignore arcing during scans).
+
+Remark:
+1. Slice collimation 64 x 0.6mm is depending whether the scanner is a 20, 40, 64 or 128 slice type
+2. Some parameter combinations may result in missing tables, because these are not tuned.
+Accordingly “IRS tables are missing”. Please vary your selection and send a feedback to CS HSC CT1.
+
+
+During this procedure, tube arcing is normal and may lead to an interruption of procedure. Please start the procedure then again.
+
+“Arcing exceeded in All Scan Repetitions” on the First Stat Mode Scan after Checkup (1 Tube Arc – Both Side)  – &lt;time&gt; on &lt;date&gt;
+
+3. Repeat described steps above 2 - 3 times.
+
+4. Check Tube history for both side arcs. If the arcing rate did not decrease during the 140 kV scans: let the tube cool down for repeat step 2 for 3 times again.</pre>
 </div>
 <div created="20200804221819650" modified="20200804230651707" title="Troubleshooting">
 <pre>[[Cooling]]
