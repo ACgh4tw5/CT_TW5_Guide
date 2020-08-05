@@ -183,7 +183,7 @@ Error message and password prompt
 
 <li>CT System Information</li>
 
-<li>Draft of 'Image Quality Escalation'</li>
+<li>Draft of 'Straton'</li>
 
 <li>Escalation</li>
 
@@ -9624,7 +9624,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200804221224339" list="Straton [[Standard Problem Escalation]] [[Draft of 'Image Quality Escalation']] Escalation Updates Troubleshooting [[Image Quality]]" modified="20200805011643175" title="$:/StoryList">
+<div created="20200804221224339" list="Windows Commands [[Draft of 'Straton']] Troubleshooting" modified="20200805011908054" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9800,7 +9800,7 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20200804232624691" modified="20200804232754492" title="Commands">
+<div created="20200804232624691" modified="20200805011946608" title="Commands">
 <pre>&quot;&quot;&quot;
 ''Computer Management''
  Add Remove Programs = appwiz.cpl
@@ -9886,22 +9886,60 @@ F = Full control
 [[IRS Types]]
 </pre>
 </div>
-<div created="20200804010758135" draft.of="Image Quality Escalation" draft.title="Image Quality Escalation" modified="20200805011548871" tags="Escalation HSC" title="Draft of 'Image Quality Escalation'">
-<pre>Escalation to HSC - IQ problems
+<div created="20200804230657971" draft.of="Straton" draft.title="Straton" modified="20200805011716923" title="Draft of 'Straton'">
+<pre>''Improvement of arcing behavior''
 
-From [[Escalation]]
+Tubes which were replaced recently show sporadically an increased arcing behavior (both side arcings) with single aborts.
+This may happen and does not necessarily mean that the Straton tube is defective. For such cases, please use following
+procedure (valid for Definition family – Def. AS, Edge, Flash and Drive systems)
 
-As per SKB article CS10031812
+#Perform Pre-Filament Adaption &amp; Filament Adaption (Local Service -&gt; Tune Up -&gt; Expert Mode -&gt; Filament Adapt)
+#* FilAdapt ensures that the optimum tube current is performed on scan begin phase.
+#Improve arcing behavior - the particles that cause arcs close to the emitter will be burnt by this procedure;
+//A high rate of arcings during this procedure is a good sign!//
 
-#A detailed description from the customer explaining the problem
-#The whole series of DICOM images the customer created that contains the image(s) with the artefact, the images which show the artifact have to be marked with a circle or arrow and a description.
-#The same series of DICOM images the customer created but reconstructed with full Field of View.
-#CSE description of problem
-#List of what has been done
-#Event Logs and SaveLog
-#Problems with 3D or heart view IQ problem require complete patient with raw data and all series that have been reconstructed.
+Perform Service scans (Local Service -&gt; Test Tools -&gt; Rot/Static) with following parameters:
 
-One annotated jpeg image can be supplied as reference but bmp and jpeg are otherwise useless for IQ investigation.</pre>
+* Deselect all items in “Process Steps”
+* RotTime 0,5 s, Number of Rotations 20
+* Slice collimation 64 x 0.6mm (if available – otherwise select 32 x 0.6mm)
+* Click “Verify” to enable next selection
+* Focus: SmallFocus
+* 120 kV / 300 mA
+* Emission Control: ITControl
+* Check Z-FFS
+* If Z-deflection is not kept, then change -&gt;
+* RotTime 1 s, Number of Rotations 10
+
+Repeat this scan 10 times (ignore arcing during scans).
+
+Perform Service scans (Local Service -&gt; Test Tools -&gt; Rot/Static) with the following parameters:
+
+* Deselect all items in “Process Steps”
+* RotTime 0,5 s, Number of Rotations 20
+* Slice collimation 64 x 0.6mm (if available – otherwise select 32 x 0.6mm)
+* Click “Verify” to enable next selection
+* Focus: SmallFocus
+* 140 kV / 250 mA
+* Emission Control: ITControl
+* Check Z-FFS
+* If Z-deflection is not kept, then change -&gt;
+* RotTime 1 s, Number of Rotations 10
+
+Repeat this scan 10 times (ignore arcing during scans).
+
+Remark:
+#Slice collimation 64 x 0.6mm is depending whether the scanner is a 20, 40, 64 or 128 slice type
+#Some parameter combinations may result in missing tables, because these are not tuned.
+Accordingly “IRS tables are missing”. Please vary your selection and send a feedback to CS HSC CT1.
+
+* During this procedure, tube arcing is normal and may lead to an interruption of procedure. Please start the procedure then again.
+
+“Arcing exceeded in All Scan Repetitions” on the First Stat Mode Scan after Checkup (1 Tube Arc – Both Side)  – &lt;time&gt; on &lt;date&gt;
+
+#Repeat described steps above 2 - 3 times.
+
+#Check Tube history for both side arcs. If the arcing rate did not decrease during the 140 kV scans: let the tube cool down for repeat step 2 for 3 times again.</pre>
 </div>
 <div created="20200804221440733" modified="20200805011523568" title="Escalation">
 <pre>[[Image Quality Escalation]]
@@ -9915,7 +9953,7 @@ One annotated jpeg image can be supplied as reference but bmp and jpeg are other
 ----
 If troubleshooting efforts fail, then follow escalation steps: [[Image Quality Escalation]]</pre>
 </div>
-<div created="20200804010758135" modified="20200804230525003" tags="Escalation HSC" title="Image Quality Escalation">
+<div created="20200804010758135" modified="20200805011655096" tags="Escalation HSC" title="Image Quality Escalation">
 <pre>Escalation to HSC - IQ problems
 
 From [[Escalation]]
